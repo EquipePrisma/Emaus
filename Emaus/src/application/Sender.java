@@ -8,27 +8,6 @@ import com.mysql.jdbc.PreparedStatement;
 
 public class Sender {
 	public void send(Doacoes doador) throws SQLException {
-		//codigo e tutorial --> https://www.caelum.com.br/apostila-java-web/bancos-de-dados-e-jdbc/
-        
-        //baixar arquivo zip --> https://dev.mysql.com/downloads/connector/j/5.1.html
-        //colocar pasta interna do arquivo zip em C:\Program Files\Java
-        
-        //necessario criar um banco de dados com o nome contatos, 
-        //abra o wamp, aparecerá um simbolo verde, vá em http://localhost/phpmyadmin/
-        //pedirá um usuário, o usuario é "root" e não tem senha 
-        //quando abrir vá na aba "Contas de usuario"
-        //click em "Edit privileges" na linha do usuário "root" 
-        //click na aba "Alterar a palavra-passe"
-        //coloque a senha como "PrismaMenos" e click em execute
-        //agora click em "New" no lado esquerdo 
-        //coloque o nome do banco de dados "mydb" e click em criar
-        //depois de criado, click em "mydb" no lado esquerdo e click em "New" para criar uma tabela
-        //coloque o nome da lista "contatos" e preencha com 
-        //nome:nome tipo:varchar tamanho:30 
-        //nome:endereco tipo:varchar tamanho:30 
-        //nome:dataNascimento tipo:varchar tamanho:30 
-        //click em guardar 
-       	         
         // conectando
         Connection con = (Connection) new ConnectionFactory().getConnection();
         
