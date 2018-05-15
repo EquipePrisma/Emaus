@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/fx/jfxrt.jar"/>
-	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/mysql/mysql-connector-java-5.1.46.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-kernel-7.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-io-7.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-barcodes-7.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-font-asian-7.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-forms-7.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-hyph-7.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-layout-7.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-pdfa-7.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-pdftest-7.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-sign-7.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/slf4j/slf4j-1.7.25/slf4j-api-1.7.25.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/slf4j/slf4j-1.7.25/slf4j-simple-1.7.25.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/pdfbox/pdfbox-2.0.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/pdfbox/pdfbox-app-2.0.9.jar"/>
-	<classpathentry kind="output" path="bin"/>
-</classpath>
+<projectDescription>
+	<name>Emaus</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.xtext.ui.shared.xtextBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+</projectDescription>
