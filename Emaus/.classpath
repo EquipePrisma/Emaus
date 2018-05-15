@@ -15,8 +15,8 @@
 	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-pdfa-7.0.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-pdftest-7.0.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/itext/itext7-sign-7.0.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/slf4j/slf4j-1.7.25/slf4j-api-1.7.25.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/slf4j/slf4j-1.7.25/slf4j-simple-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/slf4j/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/slf4j/slf4j-simple-1.7.25.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/pdfbox/pdfbox-2.0.9.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Navire/Contacts/Documents/EmausFiles/Projeto/Emaus/lib/pdfbox/pdfbox-app-2.0.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
