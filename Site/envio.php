@@ -25,8 +25,8 @@ fwrite($myfile, $txt);
 fclose($myfile);
 
 $email = new PHPMailer();
-$email->From      = 'gasparzinho633@gmail.com';
-$email->FromName  = 'Erivan Pereira';
+$email->From      = 'ALGUM EMAIL';
+$email->FromName  = 'ALGUEM';
 $email->Subject   = 'Nova Doa&#231;&#227;o';
 $email->AddEmbeddedImage('Emaus_Amor-e-Justica_banner.jpg', 'Emaus', 'Emaus_Amor-e-Justica_banner.jpg');
 $email->Body      = '
@@ -105,7 +105,7 @@ $email->Body      = '
     </body>
 </html>';
 $email->IsHTML(true);  
-$email->AddAddress('gasparzinho633@gmail.com');
+$email->AddAddress('ALGUM EMAIL');
 $email->AddAttachment('doacao.xml');
 $email->Send();
 
