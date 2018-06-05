@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="100.0" prefHeight="100.0" prefWidth="378.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="#0094a1" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deseja compactar esses arquivos?" textAlignment="CENTER">
+         <font>
+            <Font name="Meiryo Bold" size="18.0" />
+         </font>
+      </Text>
+      <Group layoutX="31.0" layoutY="54.0" translateY="5.0">
+         <children>
+            <SVGPath content="M91.71 10 27.29 10 15 20.37 15 33 104 33 104 20.37 91.71 10z" fill="#00bacf" layoutX="-4.0" styleClass="btnHistorico" />
+            <Label layoutX="44.0" layoutY="13.0" text="Sim" textFill="WHITE" />
+         </children>
+      </Group>
+      <Group layoutX="226.0" layoutY="54.0" translateY="5.0">
+         <children>
+            <SVGPath content="M91.71 10 27.29 10 15 20.37 15 33 104 33 104 20.37 91.71 10z" fill="#00bacf" layoutX="-4.0" styleClass="btnHistorico" />
+            <Label layoutX="45.0" layoutY="13.0" text="Não" textFill="WHITE" />
+         </children>
+      </Group>
+   </children>
+</AnchorPane>
