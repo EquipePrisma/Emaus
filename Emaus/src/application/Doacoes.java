@@ -77,7 +77,15 @@ public class Doacoes {
     	 return this.contato.getValue();
      }
      
+     public void setContato(String valor) {
+    	 this.contato = new SimpleStringProperty(valor);
+     }
+     
      public String getColeta() {
     	 return this.coleta.getValue();
+     }
+     
+     public void setColeta(String valor) {
+    	 this.coleta = new SimpleStringProperty(valor);
      }
  }

@@ -10,7 +10,41 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Recebedor {
-	public ObservableList<Doacoes> receber() throws SQLException {
+	public Doacoes getDoador(String query) throws SQLException {
+		Doacoes data = null;
+		Connection con = (Connection) new ConnectionFactory().getConnection();
+	    
+	    // cria um preparedStatement
+	    String sql = "SELECT * FROM doadores " + query;
+	    
+	    Statement stmt = (Statement) con.createStatement();
+	    ResultSet resultado = stmt.executeQuery(sql);
+	    
+//	    nome,instituicao,email,telefone,endereco,referencia,bairro,conteudo,conhece,complementares,contato,coleta
+	    if(resultado.next()){
+	    	data = new Doacoes(
+		    	resultado.getString("nome"), 
+		    	resultado.getString("instituicao"), 
+		    	resultado.getString("email"),
+		    	resultado.getString("telefone"), 
+		    	resultado.getString("endereco"), 
+		    	resultado.getString("referencia"),
+		    	resultado.getString("bairro"), 
+		    	resultado.getString("conteudo"), 
+		    	resultado.getString("conhece"),
+		    	resultado.getString("complementares"), 
+		    	null, 
+		    	null
+		    );
+	    }
+	    
+        stmt.close();
+        resultado.close();
+        
+		return data;
+	}
+	
+	public ObservableList<Doacoes> getDoacoes() throws SQLException {
 		ObservableList<Doacoes> data = FXCollections.observableArrayList();
 		Connection con = (Connection) new ConnectionFactory().getConnection();
 	    
@@ -21,26 +55,14 @@ public class Recebedor {
 	    ResultSet resultado = stmt.executeQuery(sql);
 	    
 		while(resultado.next()) {
-	    	//pega o valor da coluna nome, de cada linha:
-	    	String nome = resultado.getString("nome");
 	    	//imprime no console:
-	    	System.out.println("Nome do Cliente: " + nome);
+	    	System.out.println("ID do Cliente: " +  resultado.getString("iddoador"));
 	    	
-//	    	nome,instituicao,email,telefone,endereco,referencia,bairro,conteudo,conhece,complementares,contato,coleta
-	    	data.add(new Doacoes(
-	    		resultado.getString("nome"), 
-	    		resultado.getString("instituicao"), 
-	    		resultado.getString("email"),
-	    		resultado.getString("telefone"), 
-	    		resultado.getString("endereco"), 
-	    		resultado.getString("referencia"),
-	    		resultado.getString("bairro"), 
-	    		resultado.getString("conteudo"), 
-	    		resultado.getString("conhece"),
-	    		resultado.getString("complementares"), 
-	    		resultado.getString("contato"), 
-	    		resultado.getString("coleta")
-	    	));
+	    	Doacoes doacao = getDoador("WHERE id= " +  resultado.getString("iddoador"));
+	    	doacao.setContato(resultado.getString("contato"));
+	    	doacao.setColeta(resultado.getString("coleta"));
+
+	    	data.add(doacao);
 	    }
 	    
         stmt.close();
