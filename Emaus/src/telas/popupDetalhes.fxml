@@ -6,6 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
@@ -16,10 +17,11 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="598.0" maxWidth="688.0" prefHeight="558.0" prefWidth="688.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="pageDetalhes" maxHeight="598.0" maxWidth="688.0" prefHeight="558.0" prefWidth="688.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controles">
    <children>
-      <GridPane hgap="10.0" layoutX="28.0" layoutY="14.0" prefHeight="509.0" prefWidth="632.0">
+      <GridPane hgap="10.0" layoutX="28.0" layoutY="14.0" prefHeight="509.0" prefWidth="632.0" stylesheets="@../application/application.css">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -37,47 +39,52 @@
         </rowConstraints>
          <children>
             <Label text="Data de ligação:" />
-            <TextField maxWidth="100.0" styleClass="inputDetalhes" GridPane.halignment="CENTER" />
+            <TextField fx:id="detalhesLigacao" maxWidth="100.0" styleClass="inputDetalhes" stylesheets="@../application/application.css" GridPane.halignment="CENTER" />
             <Label text="Data de coleta:" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </Label>
-            <TextField maxWidth="100.0" styleClass="inputDetalhes" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+            <TextField fx:id="detalhesColeta" maxWidth="100.0" styleClass="inputDetalhes" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </TextField>
             <Label text="Estado Físico:" GridPane.rowIndex="1" />
-            <TextField maxWidth="120.0" styleClass="inputDetalhes" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <TextField fx:id="detalhesFisico" maxWidth="120.0" styleClass="inputDetalhes" stylesheets="@../application/application.css" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="20.0" />
                </GridPane.margin>
             </TextField>
             <Label text="Nome:" translateY="-5.0" GridPane.rowIndex="2" />
-            <TextField styleClass="inputDetalhes" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="detalhesNome" styleClass="inputDetalhes" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
             <Label text="Telefone:" translateY="-5.0" GridPane.rowIndex="3" />
-            <TextField maxWidth="215.0" styleClass="inputDetalhes" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="detalhesTelefone" maxWidth="215.0" styleClass="inputDetalhes" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
             <Label text="Bairro:" translateY="-5.0" GridPane.rowIndex="4" />
-            <TextField styleClass="inputDetalhes" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="detalhesBairro" styleClass="inputDetalhes" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
             <Label text="Complemento:" translateY="-5.0" GridPane.rowIndex="5" />
-            <TextField styleClass="inputDetalhes" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="detalhesComplemento" styleClass="inputDetalhes" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
             <Label text="Celular:" translateY="-5.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField maxWidth="215.0" styleClass="inputDetalhes" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="detalhesCelular" maxWidth="215.0" styleClass="inputDetalhes" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
             <Label text="Rua/Avenida:" translateY="-5.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField styleClass="inputDetalhes" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="detalhesRua" styleClass="inputDetalhes" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
             <Label text="Ponto de Referência:" translateY="-5.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField styleClass="inputDetalhes" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="detalhesReferencia" styleClass="inputDetalhes" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
             <Label text="Objetos Doados:" GridPane.rowIndex="6" />
-            <TextArea prefHeight="200.0" prefWidth="200.0" styleClass="inputDetalhes" translateY="-20.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="7" />
+            <TextArea fx:id="detalhesObjetos" prefHeight="200.0" prefWidth="200.0" translateY="-20.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="7" />
             <Label text="Doação em dinheiro:" translateY="-5.0" GridPane.rowIndex="8" GridPane.valignment="TOP" />
-            <TextField maxWidth="120.0" styleClass="inputDetalhes" GridPane.halignment="LEFT" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
+            <TextField fx:id="detalhesValor" maxWidth="120.0" styleClass="inputDetalhes" GridPane.halignment="LEFT" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
-      <Group layoutX="503.0" layoutY="507.0">
+      <Group layoutX="503.0" layoutY="507.0" />
+      <Group layoutX="487.0" layoutY="494.0">
          <children>
-            <SVGPath content="M91.71 10 27.29 10 15 20.37 15 33 104 33 104 20.37 91.71 10z" fill="#00ff1a" layoutX="-5.0" layoutY="9.0" styleClass="btnConfirmaDoacao" />
-            <Label layoutX="39.0" layoutY="23.0" styleClass="lblConfirma" text="Editar" />
+            <SVGPath id="btnEditar" content="M 38.06,10 15,26.68 V 47 H 182 V 26.68 L 158.94,10 Z" fill="#00b8ce" layoutX="-12.0" layoutY="6.0" onMouseClicked="#update" style="-fx-cursor: hand;" />
+            <Label layoutX="60.0" layoutY="3.0" onMouseClicked="#update" prefHeight="60.0" prefWidth="93.0" styleClass="labelSelecionar" stylesheets="@../application/application.css" text="Editar" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto" size="14.0" />
+               </font>
+            </Label>
          </children>
       </Group>
    </children>
