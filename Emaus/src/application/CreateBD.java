@@ -7,18 +7,14 @@ import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
+import java.sql.Connection; 
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException; 
+import java.sql.Statement;  
 
 public class CreateBD {
     CreateBD() throws FileNotFoundException, IOException, SQLException {    	
-    	try(Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/", "root", "")){
-        	String db = "create database if not exists mydb";
-        	Statement acao = (Statement) con.createStatement();
-        	acao.executeUpdate(db);
-        	acao.close();
-    	}
     	try (BufferedReader br = new BufferedReader(new FileReader("C:\\wamp64\\www\\Repositorio\\enderecos\\enderecos.csv"))) {
         	Connection con = (Connection) new ConnectionFactory().getConnection();
         	String delete = "drop table if exists enderecos";

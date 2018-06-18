@@ -16,6 +16,8 @@ public class Doacoes {
      private StringProperty complementares;
      private StringProperty contato;
      private StringProperty coleta;
+     private StringProperty idDoador;
+     private StringProperty idDoacao;
 
      public Doacoes(String nome,String instituicao,String email, String telefone,String endereco,String referencia,
     		 String bairro, String conteudo,String conhece,String complementares,String contato,String coleta) {
@@ -35,6 +37,10 @@ public class Doacoes {
      
      public String getNome() {
     	 return this.nome.getValue();
+     }
+     
+     public void setNome(String valor) {
+    	 this.nome = new SimpleStringProperty(valor);
      }
      
      public String getInstituicao() {
@@ -59,6 +65,10 @@ public class Doacoes {
      
      public String getBairro() {
     	 return this.bairro.getValue();
+     }
+     
+     public void setConteudo(String valor) {
+    	 this.conteudo = new SimpleStringProperty(valor);
      }
      
      public String getConteudo() {
@@ -87,5 +97,21 @@ public class Doacoes {
      
      public void setColeta(String valor) {
     	 this.coleta = new SimpleStringProperty(valor);
+     }
+     
+     public String getIdDoador() {
+    	 return this.idDoador.getValue();
+     }
+     
+     public void setIdDoador(String valor) {
+    	 this.idDoador = new SimpleStringProperty(valor);
+     }
+     
+     public String getIdDoacao() {
+    	 return this.idDoacao.getValue();
+     }
+     
+     public void setIdDoacao(String valor) {
+    	 this.idDoacao = new SimpleStringProperty(valor);
      }
  }

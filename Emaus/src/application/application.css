@@ -24,9 +24,6 @@
 	src:url('fontes/OpenSans-Bold.ttf');
 }
 
-#space {
-	-fx-background-color: transparent;
-}
 #lblNome, .gridCheck {
 	-fx-font-family: "Slabo 27px";	
 } 
@@ -37,10 +34,7 @@
 	-fx-fill: white;
 	
 }
-.butaoExluir,butaoImprimir{
-	-fx-fill: rgb(1,185,206);
-	-fx-background-color: rgb(1,185,206);
-}
+
 .labelConfig {
 	-fx-font-family: "Slabo 27px";	
 	-fx-font-size: 15pt;
@@ -111,7 +105,7 @@
 }
 
 .labelSelecionar {
-	-fx-font-family: "RobotoBold";
+	-fx-font-family: "Roboto";
 	-fx-font-weight: bold;
 	-fx-font-size: 14pt;
 	-fx-text-fill: white;
@@ -119,7 +113,7 @@
 
 .check-box { 
 	-fx-font-size: 18pt;
-	-fx-font-family: "OpenSans";
+	-fx-font-family: "Open Sans";
 	-fx-text-fill: #00B8CE;
 	-fx-border-color: #00B8CE;
 	-fx-border-width: 1pt;
@@ -155,11 +149,20 @@
 	-fx-padding: 0pt 0pt 20pt 0pt;
 }
 
+.anchorCalender{ /* Cor do fundo ao expandir a config */
+	-fx-background-color: rgb(207,216,221);
+}
+.checkColor{ /* Cor das checkbox */
+	-fx-background-color: white;
+}
+
 .expandText:expanded {
 	-fx-padding: 0pt;
 }
 
-
+.btnSelecionar{
+	-fx-effect: innershadow(two-pass-box, rgba(0,0,0,0.045), 0.3,3,-2,-3);	
+}
 /*                             SOBRE                                    */
 
 .abaSobre{
@@ -197,7 +200,11 @@
     -fx-tab-min-height:50px;
 }
 
-.tab-pane .tab:selected {
+.tab-pane > .tab-header-area > .headers-region > .tab:selected .iconMenu {
+    -fx-background-color: white;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .text-area {
     -fx-background-color: white;
 }
 
@@ -221,6 +228,11 @@
 	-fx-background-repeat: no-repeat;
 	-fx-background-size: 80% 100%;
 	-fx-background-position: center center; 
+}
+
+.autoComplete {
+	-fx-background-color: #cccccc;
+	-fx-color: black;
 }
 
 .inputForm {
@@ -267,19 +279,62 @@
 	-fx-font-family: "Open Sans";
 	-fx-font-weight: bold;
 	-fx-font-size: 18;
-	-fx-text-fill: #000000;
-	
+	-fx-text-fill: #000000;	
 }
 
-.btnMes,.btnHistorico,.btnImprimir,.btnBuscar {
+#inputProcurar:focused {
+	-fx-pref-width: 200px;
+	-fx-translate-x: -50px;
+}
+
+.lblMes,.btnMes,.btnHistorico,.btnImprimir,.btnBuscar {
 	-fx-cursor: hand;
+}
+
+.menu-item{
+	-fx-pref-width: 196px;
 }
 
 .butaoExcluir , .butaoImprimir{
 	-fx-fill: white;
+	-fx-cursor: hand;
 }
-/*                        LISTA                          */
 
+/*              Editar                  */
+.text-area .content{
+	-fx-background-color:rgb(206,217,222);
+	-fx-effect: innershadow(two-pass-box, rgba(0,0,0,0.045), 0.5,3,-2,-3);	
+}
+
+.text-area:focused .content {
+    -fx-background-color:-fx-control-inner-background,-fx-faint-focus-color,linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+    -fx-background-insets:0;
+    -fx-background-radius:0;
+}
+
+/* Text Area do Sobre */
+.textSobre .content {
+	-fx-background-color: white;
+}
+
+#btnEditar {
+	-fx-effect: innershadow(two-pass-box, rgba(0,0,0,0.1), 0.5,3,-3,-3);
+	
+}
+
+.inputDetalhes {
+	-fx-effect: innershadow(two-pass-box, rgba(0,0,0,0.045), 0.5,3,-2,-3);
+}
+
+.butaoImprimir,.butaoExcluir{
+	-fx-background-color: rgb(255,255,255);
+	-fx-effect: innershadow(two-pass-box, rgba(0,0,0,0.045), 0.5,3,-2,-3);
+	-fx-font-family:"Open Sans";
+	-fx-font-weight:bold;
+	-fx-font-size: 12pt;
+}
+
+/*                        LISTA                          */
 .list-view{
     -fx-background-color: transparent;
     -fx-background-insets: 0;
@@ -296,6 +351,10 @@
     -fx-border-width: 0px 30px 10px 0px;
     -fx-border-color: rgb(0,148,162);
     -fx-font-size: 16px;
+}
+
+.list-cell:empty {
+    -fx-background-color: rgb(0,148,162);
 }
 
 .list-cell SVGPath{
@@ -323,7 +382,51 @@
  -fx-background-color: rgb(2, 185, 207);
 }
 
-#space:selected .focus-indicator {
+/*                    TEXT FEEDBACKS              */
+.textFeedback {
+	-fx-font-family:"Open Sans";
+	-fx-font-weight: bold;
+	-fx-fill-color: white;
+	-fx-font-size: 22;	
+} 
+.textConfirmar {
+	-fx-font-family:"Open Sans";
+	-fx-font-weight: bold;
+}
+.btnSim,.btnNao {
+	-fx-font-family: "Roboto";
+	-fx-font-weight: bold;
+	-fx-font-size: 10pt;
+	-fx-text-fill: white;
+	-fx-cursor: hand;	
+}
+
+.mes-ativado SVGPath{
+	-fx-fill: #d32316;	
+}
+
+.mes-ativado .label{
+	-fx-font-size: 24px;
+	-fx-text-fill: #ffffff;
+}
+
+.space:selected .focus-indicator {
 	-fx-border-color: transparent;
     -fx-background-insets: 0;
+    -fx-background-color: transparent;
 }
+
+.space:selected {
+	-fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-color: transparent;
+}
+ 
+.space {
+	-fx-background-color: transparent;
+}
+
+#sobreTabs .tab:selected {
+	-fx-background-color: transparent;
+}
+

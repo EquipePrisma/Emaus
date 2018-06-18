@@ -1,12 +1,13 @@
 package application;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Calendar;
 
-import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
+import java.sql.Connection; 
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException; 
+import java.sql.Statement;
+import java.sql.ResultSet;
 
 public class Sender {
 	public void send(Doacoes doador) throws SQLException {
@@ -23,22 +24,21 @@ public class Sender {
 		}
     }
 	
-	private String getId(Doacoes doador) throws SQLException {
+	public String getId(Doacoes doador) throws SQLException {
 		String id = null;
 		System.out.println("Até aqui foi");
 		Connection con = (Connection) new ConnectionFactory().getConnection();
         // cria um preparedStatement
 	    String sql = "SELECT * FROM doadores WHERE " +
-	    		"nome = '"                 + doador.getNome() + 
-	    		"' AND instituicao = '"    + doador.getInstituicao() +
-	    		"' AND email = '"          + doador.getEmail() +
-	    		"' AND telefone = '"       + doador.getTelefone() +
-	    		"' AND endereco = '"       + doador.getEndereco() +
-	    		"' AND referencia = '"     + doador.getReferencia() +
-	    		"' AND bairro = '"         + doador.getBairro() +
-	    		"' AND conteudo = '"       + doador.getConteudo() +
-	    		"' AND conhece = '"        + doador.getConhece() +
-	    		"' AND complementares = '" + doador.getComplementares() + "'"; 	
+	    		"nome = '"                 + doador.getNome() + "'";
+//	    		"' AND instituicao = '"    + doador.getInstituicao() +
+//	    		"' AND email = '"          + doador.getEmail() +
+//	    		"' AND telefone = '"       + doador.getTelefone() +
+//	    		"' AND endereco = '"       + doador.getEndereco() +
+//	    		"' AND referencia = '"     + doador.getReferencia() +
+//	    		"' AND bairro = '"         + doador.getBairro() +
+//	    		"' AND conhece = '"        + doador.getConhece() +
+//	    		"' AND complementares = '" + doador.getComplementares() + "'"; 	
 	    System.out.println(sql);
 	    Statement stmt = (Statement) con.createStatement();
 	    ResultSet resultado = stmt.executeQuery(sql);
@@ -62,8 +62,8 @@ public class Sender {
         
         // cria um preparedStatement
         String sql = "insert into doadores" +
-                " (nome,instituicao,email,telefone,endereco,referencia,bairro,conteudo,conhece,complementares)"+ //,contato,coleta)" +
-                " values (?,?,?,?,?,?,?,?,?,?)"; //?,?)";
+                " (nome,instituicao,email,telefone,endereco,referencia,bairro,conhece,complementares)"+ //,contato,coleta)" +
+                " values (?,?,?,?,?,?,?,?,?)"; //?,?)";
         PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
         
         // preenche os valores
@@ -74,9 +74,8 @@ public class Sender {
         stmt.setString(5, doador.getEndereco());
         stmt.setString(6, doador.getReferencia());
         stmt.setString(7, doador.getBairro());
-        stmt.setString(8, doador.getConteudo());
-        stmt.setString(9, doador.getConhece());
-        stmt.setString(10, doador.getComplementares());
+        stmt.setString(8, doador.getConhece());
+        stmt.setString(9, doador.getComplementares());
         
         // executa
         stmt.execute();
@@ -91,14 +90,15 @@ public class Sender {
         
         // cria um preparedStatement
         String sql = "insert into doacoes" +
-                " (iddoador,contato,coleta)" +
-                " values (?,?,?)"; //?,?)";
+                " (iddoador,conteudo,contato,coleta)" +
+                " values (?,?,?,?)"; //?,?)";
         PreparedStatement stmt = (PreparedStatement) con.prepareStatement(sql);
         
         // preenche os valores
         stmt.setString(1, id);
-        stmt.setDate(2, new java.sql.Date(Calendar.getInstance().getTimeInMillis()));
-        stmt.setString(3, doador.getColeta());
+        stmt.setString(2, doador.getConteudo());
+        stmt.setDate(3, new java.sql.Date(Calendar.getInstance().getTimeInMillis()));
+        stmt.setString(4, doador.getColeta());
         
         // executa
         stmt.execute();

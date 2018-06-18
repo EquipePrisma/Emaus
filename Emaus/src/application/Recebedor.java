@@ -4,7 +4,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.mysql.jdbc.Statement;
+import java.sql.Connection; 
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException; 
+import java.sql.Statement;  
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -30,7 +34,7 @@ public class Recebedor {
 		    	resultado.getString("endereco"), 
 		    	resultado.getString("referencia"),
 		    	resultado.getString("bairro"), 
-		    	resultado.getString("conteudo"), 
+		    	null, 
 		    	resultado.getString("conhece"),
 		    	resultado.getString("complementares"), 
 		    	null, 
@@ -44,12 +48,12 @@ public class Recebedor {
 		return data;
 	}
 	
-	public ObservableList<Doacoes> getDoacoes() throws SQLException {
+	public ObservableList<Doacoes> getDoacoes(String query) throws SQLException {
 		ObservableList<Doacoes> data = FXCollections.observableArrayList();
 		Connection con = (Connection) new ConnectionFactory().getConnection();
 	    
 	    // cria um preparedStatement
-	    String sql = "SELECT * FROM doacoes";
+	    String sql = "SELECT * FROM doacoes " + query;
 	    
 	    Statement stmt = (Statement) con.createStatement();
 	    ResultSet resultado = stmt.executeQuery(sql);
@@ -59,6 +63,8 @@ public class Recebedor {
 	    	System.out.println("ID do Cliente: " +  resultado.getString("iddoador"));
 	    	
 	    	Doacoes doacao = getDoador("WHERE id= " +  resultado.getString("iddoador"));
+	    	doacao.setIdDoacao(resultado.getString("id"));
+	    	doacao.setConteudo(resultado.getString("conteudo"));
 	    	doacao.setContato(resultado.getString("contato"));
 	    	doacao.setColeta(resultado.getString("coleta"));
 
